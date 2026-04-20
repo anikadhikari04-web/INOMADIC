@@ -1,12 +1,12 @@
 import { Router } from "express";
 import nodemailer from "nodemailer";
-import { z } from "zod/v4";
+import { z } from "zod";
 
 const router = Router();
 
 const ContactSchema = z.object({
   name: z.string().min(1),
-  email: z.email(),
+  email: z.string().email(),
   message: z.string().min(1),
 });
 
