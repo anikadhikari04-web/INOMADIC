@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import portImg1 from "@/assets/images/portfolio-1.png";
-import portImg2 from "@/assets/images/portfolio-2.png";
-import portImg3 from "@/assets/images/portfolio-3.png";
-import portImg4 from "@/assets/images/portfolio-4.png";
-import portImg5 from "@/assets/images/portfolio-5.png";
-import heroImg2 from "@/assets/images/hero-2.png"; // Reusing as 6th portfolio item
+import portImg1 from "@assets/Untitletrws654fyg6yti87hujkuok9iklod_1776766606514.png";
+import portImg2 from "@assets/Untitletcedv67uyurbtghjud_1776766606515.png";
+import portImg3 from "@assets/Untse2wrt43w4ete2witled_1776766606516.png";
+import portImg4 from "@assets/Undghfjfttyjugtjtitled_1776766606517.png";
+import portImg5 from "@assets/Untiiteyi57485itled_1776766606518.png";
+import portImg6 from "@assets/Unt6yu98i0o9-pitled_1776766606519.png";
+import portImg7 from "@assets/Untyt6re85eitled_1776766606520.png";
+import portImg8 from "@assets/Untitled_1776766606521.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -22,12 +24,14 @@ const staggerContainer = {
 
 export default function OurWorks() {
   const images = [
-    { src: portImg1, title: "Automotive Elegance", category: "Commercial" },
-    { src: portImg2, title: "Behind The Scenes", category: "Production" },
-    { src: portImg3, title: "Fluid Dynamics", category: "Motion Graphics" },
-    { src: portImg4, title: "Neon Nights", category: "Editorial" },
-    { src: portImg5, title: "Cyber City", category: "VFX" },
-    { src: heroImg2, title: "Abstract Core", category: "3D Rendering" },
+    { src: portImg1, title: "COVID Awareness Campaign", category: "Public Health" },
+    { src: portImg2, title: "The Unsung Heroes", category: "Editorial Design" },
+    { src: portImg3, title: "Safe Vaccination Awareness", category: "Health Campaign" },
+    { src: portImg4, title: "Coromandel — Quality over Quantity", category: "Brand Campaign" },
+    { src: portImg5, title: "Public Health in Jharkhand", category: "Webinar Promo" },
+    { src: portImg6, title: "PRADAN Study Sharing", category: "Event Design" },
+    { src: portImg7, title: "Safai Karmachari Andolan", category: "Social Movement" },
+    { src: portImg8, title: "Health Awareness Poster", category: "Infographic" },
   ];
 
   const videos = [
@@ -128,7 +132,7 @@ export default function OurWorks() {
                 <img 
                   src={img.src} 
                   alt={img.title} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-full object-contain bg-black transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
                   <span className="text-primary text-xs font-mono uppercase tracking-widest mb-2">{img.category}</span>
