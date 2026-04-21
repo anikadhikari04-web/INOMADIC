@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import teamImg1 from "@/assets/images/team-1.png";
-import teamImg2 from "@/assets/images/team-2.png";
-import teamImg3 from "@/assets/images/team-3.png";
+import uttamImg from "@assets/Unteu6rej6yutitled_1776767797329.png";
+import subhankarImg from "@assets/Unti0-9iiyyiouiutled_1776767797328.png";
+import arnabImg from "@assets/Untittreu65ei76led_1776767797328.png";
+import soumyaImg from "@assets/Unghfireie67rr78oritled_1776767797327.png";
+import suryaImg from "@assets/Untidutreur54htrde5tled_1776767797326.png";
+import pragyaImg from "@assets/Untitl7oit07t0ed_1776767797323.png";
 import heroImg2 from "@/assets/images/hero-2.png";
 
 const fadeInUp = {
@@ -149,31 +152,30 @@ export default function About() {
             </p>
           </motion.div>
 
-          <motion.div 
+          {/* Founding & Key People */}
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16"
           >
             {[
-              { name: "Arjun Verma", role: "Creative Director", img: teamImg1 },
-              { name: "Neha Sharma", role: "Lead Cinematographer", img: teamImg2 },
-              { name: "Rahul Desai", role: "Motion Artist", img: teamImg3 },
+              { name: "Uttam Adhikary", role: "Partner & Founding Member", img: uttamImg, group: "Founder" },
+              { name: "Subhankar Chandogi", role: "Key Person", img: subhankarImg, group: "Key People" },
             ].map((member, i) => (
-              <motion.div 
-                key={i}
-                variants={fadeInUp}
-                className="group cursor-pointer"
-              >
-                <div className="relative overflow-hidden rounded-3xl aspect-[3/4] mb-6 border border-white/10 glow-border">
-                  <img 
-                    src={member.img} 
-                    alt={member.name} 
+              <motion.div key={i} variants={fadeInUp} className="group cursor-pointer">
+                <div className="relative overflow-hidden rounded-3xl aspect-[4/3] mb-4 border border-primary/20 glow-border">
+                  <img
+                    src={member.img}
+                    alt={member.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80"></div>
-                  <div className="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90"></div>
+                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-primary/90 text-black text-[10px] font-bold tracking-widest uppercase">
+                    {member.group}
+                  </div>
+                  <div className="absolute bottom-0 left-0 p-6 w-full">
                     <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
                     <p className="text-primary font-mono text-sm tracking-wider uppercase">{member.role}</p>
                   </div>
@@ -181,6 +183,59 @@ export default function About() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Leadership Team */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="mb-10"
+          >
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Leadership <span className="text-primary">Team</span>
+            </h3>
+            <p className="text-gray-500 text-sm">The hands and minds shaping every frame.</p>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {[
+              { name: "Arnab Adhikary", role: "COO", img: arnabImg },
+              { name: "Soumyadyuti Dey Chowdhury", role: "Manager — Videography", img: soumyaImg },
+              { name: "Suryadyuti Banerjee", role: "Manager — Documentation", img: suryaImg },
+              { name: "Pragya Parinita Das", role: "Manager — Motion Graphics", img: pragyaImg },
+            ].map((member, i) => (
+              <motion.div key={i} variants={fadeInUp} className="group cursor-pointer">
+                <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-4 border border-white/10 glow-border">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90"></div>
+                  <div className="absolute bottom-0 left-0 p-5 w-full">
+                    <h4 className="text-base font-bold text-white mb-1 leading-tight">{member.name}</h4>
+                    <p className="text-primary font-mono text-[10px] tracking-wider uppercase">{member.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center text-gray-500 text-sm mt-12 italic"
+          >
+            …and 16 other talented members across 4 states crafting India's finest IEC materials.
+          </motion.p>
         </div>
       </section>
 
